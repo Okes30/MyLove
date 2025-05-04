@@ -1,38 +1,72 @@
-
-<!DOCTYPE html>
-<html lang="id">
+<!DOCTYPE html><html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Untukmu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ada yang mau aku bilang...</title>
   <style>
     body {
-      background-color: #ffe6f0;
-      font-family: 'Arial', sans-serif;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(to right, #ffecd2, #fcb69f);
       text-align: center;
-      padding: 50px;
-    }
-    .card {
-      background-color: #fff0f5;
       padding: 20px;
-      border-radius: 10px;
-      display: inline-block;
-      max-width: 600px;
     }
     h1 {
-      color: #ff69b4;
+      font-size: 2.5em;
+      color: #333;
     }
     p {
-      color: #333;
-      font-size: 16px;
-      line-height: 1.6;
+      font-size: 1.2em;
+      margin-top: 20px;
+    }
+    .buttons {
+      margin-top: 30px;
+    }
+    button {
+      font-size: 1.2em;
+      padding: 10px 20px;
+      margin: 10px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .yes {
+      background-color: #ff6f91;
+      color: white;
+    }
+    .no {
+      background-color: #c0c0c0;
+      color: black;
+    }
+    .hidden {
+      display: none;
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1>Hai, kamu</h1>
-    <p>Sejak kita kenal pertama kali aku tidak ada niatan untuk menaruh hati di kamu, namun semakin lama kita kenal, semakin timbul rasa cinta dan sayangku ke kamu. Aku tahu aku bukan yang terbaik di antara semua cowok yang kamu kenal, tapi aku mau menjadi satu-satunya cowok yang selalu kamu ingat saat lagi senang maupun susah, menjadi tempat kamu bercerita, dan aku mau menjadi satu-satunya cowok yang akan engkau nikahi suatu saat nanti. Walaupun itu masih jauh di depan sana, tapi aku mau suatu saat nama kamu lah yang aku sebut di depan penghulu.</p>
-    <p><strong>Maukah kamu menjadi bagian dari hidupku?</strong></p>
+  <h1>Ada yang mau aku bilang...</h1>
+<p>Sejak kita kenal pertama kali aku tidak ada niatan untuk menaruh hati di kamu, namun semakin lama kita kenal, semakin timbul rasa cinta dan sayangku ke kamu. Aku tahu aku bukan yang terbaik di antara semua cowok yang kamu kenal, tapi aku mau menjadi satu-satunya cowok yang selalu kamu ingat saat lagi senang maupun susah, menjadi tempat kamu bercerita, dan aku mau menjadi satu-satunya cowok yang akan engkau nikahi suatu saat nanti. Walaupun itu masih jauh di depan sana, tapi aku mau suatu saat nama kamu lah yang aku sebut di depan penghulu.</p>
+  <p id="question">Aku suka kamu. Mau nggak kamu jadi pacarku?</p>
+  <div class="buttons">
+    <button class="yes" onclick="jawab(true)">Iya, aku mau!</button>
+    <button class="no" onclick="jawab(false)">Enggak...</button>
   </div>
-</body>
+  <p id="response" class="hidden"></p>  <script>
+    function jawab(yes) {
+      const question = document.getElementById('question');
+      const response = document.getElementById('response');
+      if (yes) {
+        question.innerText = '';
+        response.innerText = 'Yeay! Makasih ya, aku janji bakal bikin kamu bahagia terus!';
+      } else {
+        question.innerText = '';
+        response.innerText = 'Yahh... nggak apa-apa sih, aku tetap suka kamu kok!';
+      }
+      response.classList.remove('hidden');
+    }
+  </script></body>
 </html>
